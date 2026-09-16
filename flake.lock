@@ -1,5 +1,41 @@
 {
   "nodes": {
+    "hm-dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789595796,
+        "narHash": "sha256-qzlHXmdCdSEfpHIzyNZrlsCV1y5eNrVfw+KwkDbXPnw=",
+        "owner": "iskanred",
+        "repo": "nix-hm-dotfiles",
+        "rev": "8917d1fb38d2cd57659591d9276d4181c9829e3d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "iskanred",
+        "repo": "nix-hm-dotfiles",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789386765,
+        "narHash": "sha256-4hyLFBhzQC7+qPMELWc7J/sbdA6ckXZxXU9CYRsGhsc=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "87c391f49a34660de6010f35bb50fb1bf811be9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +75,8 @@
     },
     "root": {
       "inputs": {
+        "hm-dotfiles": "hm-dotfiles",
+        "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs"
       }
