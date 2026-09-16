@@ -1,13 +1,20 @@
 {
   "nodes": {
     "hm-dotfiles": {
-      "flake": false,
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1789595796,
-        "narHash": "sha256-qzlHXmdCdSEfpHIzyNZrlsCV1y5eNrVfw+KwkDbXPnw=",
+        "lastModified": 1789596681,
+        "narHash": "sha256-sKhJFa52kM2pXsiLcjdsmpxUUuoaRDB+xV0en2V8IGQ=",
         "owner": "iskanred",
         "repo": "nix-hm-dotfiles",
-        "rev": "8917d1fb38d2cd57659591d9276d4181c9829e3d",
+        "rev": "8d3ac31d18d0a771df98887d341b05cc6f270b31",
         "type": "github"
       },
       "original": {

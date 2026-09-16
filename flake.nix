@@ -16,7 +16,9 @@
 
     hm-dotfiles = {
       url = "github:iskanred/nix-hm-dotfiles";
-      flake = false;
+
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 
@@ -72,7 +74,7 @@ outputs =
             };
 
             home-manager.users.${username}.imports = [
-              "${hm-dotfiles}/home.nix"
+              hm-dotfiles.homeModules.default
             ];
           }
         ];
