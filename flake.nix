@@ -32,19 +32,7 @@ outputs =
     ...
   }:
   let
-    hosts = {
-      personal = {
-        hostname = "macbook";
-        username = "iskanred";
-        system = "aarch64-darwin";
-      };
-
-      work = {
-        hostname = "work-macbook";
-        username = "YOUR_WORK_USERNAME";
-        system = "aarch64-darwin";
-      };
-    };
+    local = import ./local.nix;
 
     mkDarwin =
       {
@@ -81,9 +69,6 @@ outputs =
       };
   in
   {
-    darwinConfigurations = {
-      personal = mkDarwin hosts.personal;
-      work = mkDarwin hosts.work;
-    };
+    darwinConfigurations.current = mkDarwin local;
   };
 }
