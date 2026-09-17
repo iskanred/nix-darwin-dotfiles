@@ -1,0 +1,6 @@
+{
+  username = "user";
+  hostname = "host";
+  system = "aarch64-darwin";
+  homeDirectory = "/home/user";
+}
