@@ -10,7 +10,21 @@
     home = local.homeDirectory;
   };
 
-  system.defaults.dock.show-recents = false;
+  system.defaults = {
+    dock.show-recents = false;
+
+    CustomUserPreferences = {
+      # Use Caps Lock to switch between Latin and non-Latin input sources.
+      NSGlobalDomain = {
+        TISRomanSwitchState = 1;
+      };
+
+      "com.apple.HIToolbox" = {
+        # Globe/Fn key -> Show Emoji & Symbols.
+        AppleFnUsageType = 2;
+      };
+    };
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
