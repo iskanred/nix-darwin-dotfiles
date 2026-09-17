@@ -39,10 +39,11 @@ outputs =
         hostname,
         username,
         system,
+        homeDirectory
       }:
       nix-darwin.lib.darwinSystem {
         specialArgs = {
-          inherit hostname username system;
+          inherit local;
         };
 
         modules = [
@@ -55,10 +56,7 @@ outputs =
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = {
-              local = {
-                inherit username system;
-                homeDirectory = "/Users/${username}";
-              };
+              inherit local;
             };
 
             home-manager.users.${username}.imports = [

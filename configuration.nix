@@ -1,14 +1,16 @@
-{ username, ... }:
+{ local, ... }:
 
 {
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = local.system;
 
-  system.primaryUser = username;
+  system.primaryUser = local.username;
 
-  users.users.${username} = {
-    name = username;
-    home = "/Users/${username}";
+  users.users.${local.username} = {
+    name = local.username;
+    home = local.homeDirectory;
   };
+
+  system.defaults.dock.show-recents = false;
 
   nix.settings.experimental-features = [
     "nix-command"
